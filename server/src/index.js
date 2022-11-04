@@ -13,6 +13,7 @@ const app = express();
 
 app.enable("trust proxy"); // needed for rate limiting by Client IP
 
+// ***When pushing to heroku, ensure mongodb link replace .env.databseurl***
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -38,7 +39,6 @@ app.use("/api/logs", logs);
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
-const port = process.env.PORT || 1337;
-app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`);
+app.listen(process.env.PORT || 1337, () => {
+  console.log(`It's Alive`);
 });
