@@ -11,9 +11,9 @@ const App = () => {
   const [viewport, setViewport] = useState({
     width: "100vw",
     height: "100vh",
-    latitude: 37.6,
-    longitude: -95.665,
-    zoom: 3,
+    latitude: 39.8283,
+    longitude: -98.5795,
+    zoom: 2,
   });
 
   const getEntries = async () => {
@@ -36,7 +36,7 @@ const App = () => {
   return (
     <ReactMapGL
       {...viewport}
-      mapStyle="mapbox://styles/brandonfarncombe/cla1gqmln000514rp0infa062"
+      mapStyle="mapbox://styles/brandonfarncombe/cla1s73bp000d14nuu4v7ctmi"
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       onViewportChange={setViewport}
       onDblClick={showAddMarkerPopup}
